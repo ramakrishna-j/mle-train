@@ -1,11 +1,23 @@
 import os
 import tarfile
 
-import matplotlib as mpl
-import matplotlib.pyplot as plt
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.stats import randint
 from six.moves import urllib
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV,
+    StratifiedShuffleSplit,
+    train_test_split,
+)
+from sklearn.tree import DecisionTreeRegressor
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 HOUSING_PATH = os.path.join("datasets", "housing")
@@ -21,9 +33,6 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
     housing_tgz.close()
 
 
-import pandas as pd
-
-
 def load_housing_data(housing_path=HOUSING_PATH):
     csv_path = os.path.join(housing_path, "housing.csv")
     return pd.read_csv(csv_path)
@@ -32,7 +41,6 @@ def load_housing_data(housing_path=HOUSING_PATH):
 fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH)
 housing = load_housing_data(housing_path=HOUSING_PATH)
 
-from sklearn.model_selection import train_test_split
 
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
@@ -42,7 +50,6 @@ housing["income_cat"] = pd.cut(
     labels=[1, 2, 3, 4, 5],
 )
 
-from sklearn.model_selection import StratifiedShuffleSplit
 
 split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 for train_index, test_index in split.split(housing, housing["income_cat"]):
@@ -92,7 +99,6 @@ housing = strat_train_set.drop(
 )  # drop labels for training set
 housing_labels = strat_train_set["median_house_value"].copy()
 
-from sklearn.impute import SimpleImputer
 
 imputer = SimpleImputer(strategy="median")
 
@@ -117,12 +123,9 @@ housing_prepared = housing_tr.join(
     pd.get_dummies(housing_cat, drop_first=True)
 )
 
-from sklearn.linear_model import LinearRegression
-
 lin_reg = LinearRegression()
 lin_reg.fit(housing_prepared, housing_labels)
 
-from sklearn.metrics import mean_squared_error
 
 housing_predictions = lin_reg.predict(housing_prepared)
 lin_mse = mean_squared_error(housing_labels, housing_predictions)
@@ -130,13 +133,9 @@ lin_rmse = np.sqrt(lin_mse)
 lin_rmse
 
 
-from sklearn.metrics import mean_absolute_error
-
 lin_mae = mean_absolute_error(housing_labels, housing_predictions)
 lin_mae
 
-
-from sklearn.tree import DecisionTreeRegressor
 
 tree_reg = DecisionTreeRegressor(random_state=42)
 tree_reg.fit(housing_prepared, housing_labels)
@@ -146,10 +145,6 @@ tree_mse = mean_squared_error(housing_labels, housing_predictions)
 tree_rmse = np.sqrt(tree_mse)
 tree_rmse
 
-
-from scipy.stats import randint
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import RandomizedSearchCV
 
 param_distribs = {
     "n_estimators": randint(low=1, high=200),
@@ -170,8 +165,6 @@ cvres = rnd_search.cv_results_
 for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
     print(np.sqrt(-mean_score), params)
 
-
-from sklearn.model_selection import GridSearchCV
 
 param_grid = [
     # try 12 (3×4) combinations of hyperparameters
