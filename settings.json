@@ -3,7 +3,7 @@
     "python.pythonPath": "./c/Users/ramakrishna.j/Desktop/new_ml/mle-train/env.yml",
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
-        "--line-length=99"
+        "--line-length=79"
     ],
     "python.sortImports.args": [
         "--profile",
@@ -13,6 +13,10 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
+    },
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingModuleSource": "none"
     },
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true

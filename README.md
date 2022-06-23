@@ -1,5 +1,6 @@
 
 # Creating an Virtual environment in ubuntu
+Run the env.yml in your ubuntu setup to load and work in this python environment. use the below code for loading the environment.
 - conda env create -f env.yml    # for loading already created environment
 - conda env export > env.yml     # to create new virtual environment
 
