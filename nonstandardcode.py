@@ -1,5 +1,6 @@
 import os
 import tarfile
+import warnings
 
 # import matplotlib as mpl
 # import matplotlib.pyplot as plt
@@ -18,6 +19,8 @@ from sklearn.model_selection import (
     train_test_split,
 )
 from sklearn.tree import DecisionTreeRegressor
+
+warnings.filterwarnings("ignore")
 
 DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml/master/"
 HOUSING_PATH = os.path.join("datasets", "housing")
