@@ -22,4 +22,23 @@ The following techniques have been used:
  - All the above said modelling techniques are tried and evaluated. The final metric used to evaluate is mean squared error.
 
 ## To excute the script
-python < scriptname.py 
+Step 1 - Environment setup
+
+- You can create the environment required for this setup by running the below command by navigating into the current directory in the shell.
+
+    root
+        conda env create -f env.yml
+
+- Then activate it by running the below command
+
+    root
+
+        conda activate mle-dev
+
+Step 2 - Run the file
+
+- You can type the below command in the shell.
+
+    python
+
+        python nonstandardcode.py
