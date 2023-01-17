@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>housing_pkg package &mdash; housing_prediction 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> housing_prediction
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">housing_pkg package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-housing_pkg.ingest_data">housing_pkg.ingest_data module</a></li>
+<li><a class="reference internal" href="#module-housing_pkg.pipeline">housing_pkg.pipeline module</a></li>
+<li><a class="reference internal" href="#module-housing_pkg.score">housing_pkg.score module</a></li>
+<li><a class="reference internal" href="#housing-pkg-train-module">housing_pkg.train module</a></li>
+<li><a class="reference internal" href="#module-housing_pkg">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">housing_prediction</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">housing_pkg package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/housing_pkg.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="housing-pkg-package">
+<h1>housing_pkg package<a class="headerlink" href="#housing-pkg-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-housing_pkg.ingest_data">
+<span id="housing-pkg-ingest-data-module"></span><h2>housing_pkg.ingest_data module<a class="headerlink" href="#module-housing_pkg.ingest_data" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.ingest_data.check_nulls">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.ingest_data.</span></span><span class="sig-name descname"><span class="pre">check_nulls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.ingest_data.check_nulls" title="Permalink to this definition"></a></dt>
+<dd><p>If there are any null values in the data, return False. Otherwise, return True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – The dataframe you want to check for null values</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A boolean value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.ingest_data.fetch_housing_data">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.ingest_data.</span></span><span class="sig-name descname"><span class="pre">fetch_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.tgz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/raw'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.ingest_data.fetch_housing_data" title="Permalink to this definition"></a></dt>
+<dd><p>&gt; It downloads the housing.tgz file from the housing_url, extracts the housing.csv
+file from the housing.tgz file, and saves the housing.csv file in the housing_path
+directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>housing_url</strong> – The URL of the housing dataset (defaults to the one hosted by</p>
+</dd>
+</dl>
+<p>the University of California, Irvine)
+:param housing_path: The directory to save the dataset in</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.ingest_data.load_housing_data">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.ingest_data.</span></span><span class="sig-name descname"><span class="pre">load_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/raw'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.ingest_data.load_housing_data" title="Permalink to this definition"></a></dt>
+<dd><p>It loads the housing data from the given path, and returns a Pandas DataFrame object
+containing the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>housing_path</strong> – The path to the housing dataset</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.ingest_data.prepare_train_test_data">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.ingest_data.</span></span><span class="sig-name descname"><span class="pre">prepare_train_test_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.ingest_data.prepare_train_test_data" title="Permalink to this definition"></a></dt>
+<dd><ul class="simple">
+<li><p>Check for null values in the dataframe and drop them if any.</p></li>
+<li><p>Create a new column called <cite>income_cat</cite> which is a categorical variable based on</p></li>
+</ul>
+<p>the <cite>median_income</cite> column.
+- Split the data into train and test sets using the <cite>StratifiedShuffleSplit</cite> class.
+- Drop the <cite>income_cat</cite> column from the train and test sets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>housing</strong> – The dataframe that we want to split into train and test sets</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary with two keys, train and test, each of which contains a data</p>
+</dd>
+</dl>
+<p>frame.</p>
+</dd></dl>
+
+</section>
+<section id="module-housing_pkg.pipeline">
+<span id="housing-pkg-pipeline-module"></span><h2>housing_pkg.pipeline module<a class="headerlink" href="#module-housing_pkg.pipeline" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="housing_pkg.pipeline.CombinedAttributesAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">housing_pkg.pipeline.</span></span><span class="sig-name descname"><span class="pre">CombinedAttributesAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add_bedrooms_per_room</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.pipeline.CombinedAttributesAdder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="housing_pkg.pipeline.CombinedAttributesAdder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.pipeline.CombinedAttributesAdder.fit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="housing_pkg.pipeline.CombinedAttributesAdder.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.pipeline.CombinedAttributesAdder.transform" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.pipeline.build_pipeline">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.pipeline.</span></span><span class="sig-name descname"><span class="pre">build_pipeline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.pipeline.build_pipeline" title="Permalink to this definition"></a></dt>
+<dd><p>It creates a pipeline that first transforms the data using the full_pipeline, then
+trains a RandomForestRegressor on the resulting data
+:return: A pipeline object that has a preparation step and a random_reg step.</p>
+</dd></dl>
+
+</section>
+<section id="module-housing_pkg.score">
+<span id="housing-pkg-score-module"></span><h2>housing_pkg.score module<a class="headerlink" href="#module-housing_pkg.score" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="housing_pkg.score.score_model">
+<span class="sig-prename descclassname"><span class="pre">housing_pkg.score.</span></span><span class="sig-name descname"><span class="pre">score_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#housing_pkg.score.score_model" title="Permalink to this definition"></a></dt>
+<dd><p>It loads the model from the model folder, makes predictions on the test data, and
+calculates the RMSE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – The dataframe to be scored</p></li>
+<li><p><strong>model_folder</strong> – The folder where the model is saved</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The RMSE of the model</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="housing-pkg-train-module">
+<h2>housing_pkg.train module<a class="headerlink" href="#housing-pkg-train-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-housing_pkg">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-housing_pkg" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Rama Krishna.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
