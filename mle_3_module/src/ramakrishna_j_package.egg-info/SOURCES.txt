@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.py
+src/ramakrishna_j_package/__init__.py
+src/ramakrishna_j_package/ingest_data.py
+src/ramakrishna_j_package/pipeline.py
+src/ramakrishna_j_package/score.py
+src/ramakrishna_j_package/train.py
+src/ramakrishna_j_package.egg-info/PKG-INFO
+src/ramakrishna_j_package.egg-info/SOURCES.txt
+src/ramakrishna_j_package.egg-info/dependency_links.txt
+src/ramakrishna_j_package.egg-info/requires.txt
+src/ramakrishna_j_package.egg-info/top_level.txt
